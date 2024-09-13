@@ -26,7 +26,8 @@ async function bootstrap() {
   const PORT = process.env.PORT || 3000;
   const app = await NestFactory.create(AppModule, { cors: true });
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
-  app.use(CrashTestMiddleware);
+  const crashTestMiddleware = new CrashTestMiddleware();
+  app.use(crashTestMiddleware);
 
   await app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));
 }
