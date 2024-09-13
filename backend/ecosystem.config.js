@@ -1,12 +1,8 @@
-module.exports = {
-  apps: [
-    {
-      name: 'web-plus-docker-and-compose',
-      script: 'dist/main.js',
-      watch: false,
-      restart_delay: 1000,
-      max_restarts: 10,
-      autorestart: true,
-    },
-  ],
-};
+module.exports = [
+  {
+    script: 'dist/main.js',
+    name: 'web-plus-docker-and-compose',
+    restart_delay: 3000,
+    watch: true,
+  },
+];
