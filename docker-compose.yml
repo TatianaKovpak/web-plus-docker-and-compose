@@ -9,7 +9,7 @@ services:
     restart: always
     ports:
       - '4000:3000'
-    env_file: .env.example
+    env_file: .env
     networks:
       - internal
 
@@ -28,7 +28,7 @@ services:
   postgres:
     container_name: 'kupipodaridai-postgres'
     image: postgres:alpine
-    env_file: .env.example
+    env_file: .env
     restart: always
     volumes:
       - pg_data:/data/postgres
